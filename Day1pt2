@@ -1,0 +1,26 @@
+import java.util.*;
+import java.util.stream.Collectors;
+
+public class day1 {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        ArrayList<Integer> ryan = new ArrayList<>();
+        int temp = 0;
+        while (scan.hasNextLine()) {
+            String s = scan.nextLine();
+            if (!s.equals("")) {
+                temp += Integer.parseInt(s);
+            }
+            else {
+                ryan.add(temp);
+                temp = 0;
+            }
+        }
+        List<Integer> sorted = ryan.stream().sorted().toList();
+        int sum = 0;
+        for (int i = sorted.size() - 1; i >= sorted.size() - 3; i--) {
+            sum += sorted.get(i);
+        }
+        System.out.println(sum);
+    }
+}
