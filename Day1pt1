@@ -1,0 +1,27 @@
+import java.util.*;
+        import java.util.stream.Collectors;
+
+public class day1 {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        ArrayList<Integer> ryan = new ArrayList<>();
+        int temp = 0;
+        while (scan.hasNextLine()) {
+            String s = scan.nextLine();
+            if (!s.equals("")) {
+                temp += Integer.parseInt(s);
+            }
+            else {
+                ryan.add(temp);
+                temp = 0;
+            }
+        }
+        int index = 0;
+        for (int i = 0; i<ryan.size(); i++) {
+            if (ryan.get(index) < ryan.get(i)) {
+                index = i;
+            }
+        }
+        System.out.println(ryan.get(index));
+    }
+}
