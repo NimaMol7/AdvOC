@@ -1,0 +1,42 @@
+import java.util.*;
+public class Day2 {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int finalscore = 0;
+        while (scan.hasNextLine()) {
+            String opp = scan.next();
+            String me = scan.next();
+            if (opp.equals("A") && me.equals("X")) {
+                finalscore += 3;
+            }
+            else if (opp.equals("A") && me.equals("Y")) {
+                finalscore += 4;
+            }
+            else if (opp.equals("A") && me.equals("Z")) {
+                finalscore += 8;
+            }
+            else if (opp.equals("B") && me.equals("X")) {
+                finalscore += 1;
+            }
+            else if (opp.equals("B") && me.equals("Y")) {
+                finalscore += 5;
+            }
+            else if (opp.equals("B") && me.equals("Z")) {
+                finalscore += 9;
+            }
+            else if (opp.equals("C") && me.equals("X")) {
+                finalscore += 2;
+            }
+            else if (opp.equals("C") && me.equals("Y")) {
+                finalscore += 6;
+            }
+            else if (opp.equals("C") && me.equals("Z")) {
+                finalscore += 7;
+            }
+            else {
+                break;
+            }
+        }
+        System.out.println(finalscore);
+    }
+}
