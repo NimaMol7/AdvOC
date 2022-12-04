@@ -1,0 +1,22 @@
+import java.util.*;
+public class Day4 {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int num = 0;
+        while (scan.hasNextLine()) {
+            String og = scan.nextLine();
+            if (og.equals("9")) {
+                break;
+            }
+            int a = Integer.parseInt(og.substring(0, og.indexOf("-")));
+            int b = Integer.parseInt(og.substring(og.indexOf("-")+1, og.indexOf(",")));
+            og = og.substring(og.indexOf(",") + 1);
+            int c = Integer.parseInt(og.substring(0, og.indexOf("-")));
+            int d = Integer.parseInt(og.substring(og.indexOf("-")+1));
+            if ((a<=c && b>=d) || (a>=c && b<=d)) {
+                num++;
+            }
+        }
+        System.out.println(num);
+    }
+}
